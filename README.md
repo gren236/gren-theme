@@ -1,2 +1,7 @@
-# gren-theme
-A theme for Hugo for Gren blog
+# Theme Name
+
+## Features
+
+## Installation
+
+## Configuration
