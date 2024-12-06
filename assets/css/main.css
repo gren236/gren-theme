@@ -79,14 +79,14 @@ body>header {
     display: none;
     position: absolute;
     top: 120%;
-    right: 1rem;  /* Align to right */
-    width: 280px; /* Fixed width */
+    right: 1rem;
+    width: 280px;
     background: var(--pico-background-color);
     padding: 1rem;
     border: var(--pico-border-width) solid var(--pico-form-element-border-color);
     border-radius: 0 0 0 var(--pico-border-radius);
     box-shadow: var(--pico-card-box-shadow);
-    
+
     /* Add smooth transition */
     opacity: 0;
     transform: translateX(100%);
@@ -142,12 +142,25 @@ body>header {
   }
 }
 
+/* List */
+
+.list-title {
+  text-align: center;
+  font-size: 2.5rem;
+  /* multiple standard margin bottom by 3 */
+  margin-bottom: calc(var(--pico-spacing) * 3);
+}
+
 /* Single page */
 
 @media (min-width: 768px) {
   .page .grid {
     grid-template-columns: 4fr 1fr;
   }
+}
+
+.page>div>hgroup {
+  margin-bottom: var(--pico-spacing);
 }
 
 @media (max-width: 767px) {
@@ -169,4 +182,59 @@ body>header {
 #TableOfContents {
   position: sticky;
   top: 6rem;
+  margin-top: 5rem;
+}
+
+/* Tag styling */
+.taxonomy-list {
+  list-style: none;
+  /* Already exists but important */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  /* Reduced from 0.5rem */
+}
+
+.taxonomy-tag {
+  display: inline-block;
+  background: var(--pico-secondary-background);
+  padding: 0.15rem 0.5rem;
+  /* Reduced from 0.25rem 0.75rem */
+  border-radius: 0.75rem;
+  /* Reduced from 1rem */
+  font-size: 0.8rem;
+  /* Reduced from 0.9rem */
+  color: var(--pico-secondary);
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.taxonomy-tag:hover {
+  background: var(--pico-secondary-hover-background);
+  color: var(--pico-secondary-hover);
+}
+
+/* Remove bullet points from list items */
+.taxonomy-list li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.terms-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.terms-container a,
+.terms-container .taxonomy-list {
+  margin: 0;
+}
+
+.terms-container .taxonomy-list {
+  display: flex;
+  gap: 0.3rem;
 }

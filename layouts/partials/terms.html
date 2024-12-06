@@ -1,23 +1,20 @@
-{{- /*
-For a given taxonomy, renders a list of terms assigned to the page.
+<div class="terms-container">
+  {{ with .page.Params.author }}
+    {{ with site.Taxonomies.author.Get . }}
+      <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
+    {{ else }}
+      {{ . }}
+    {{ end }}
+  {{ end }}
 
-@context {page} page The current page.
-@context {string} taxonomy The taxonomy.
-
-@example: {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-*/}}
-
-{{- $page := .page }}
-{{- $taxonomy := .taxonomy }}
-
-{{- with $page.GetTerms $taxonomy }}
-  {{- $label := (index . 0).Parent.LinkTitle }}
-  <div>
-    <div>{{ $label }}:</div>
-    <ul>
-      {{- range . }}
-        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-      {{- end }}
+  {{ with index .page.Params .taxonomy }}
+    <ul class="taxonomy-list">
+      {{ range . }}
+        {{ $href := (printf "/%s/%s" $.taxonomy (urlize .)) }}
+        <li>
+          <a href="{{ $href }}" class="taxonomy-tag">{{ . }}</a>
+        </li>
+      {{ end }}
     </ul>
-  </div>
-{{- end }}
+  {{ end }}
+</div>
