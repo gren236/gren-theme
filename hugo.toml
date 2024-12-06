@@ -2,7 +2,36 @@ baseURL = 'https://example.org/'
 languageCode = 'en-US'
 title = 'My New Hugo Site'
 
+[menus]
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 10
+[[menus.main]]
+name = 'Pages'
+pageRef = '/pages'
+weight = 20
+
+[params]
+github_url = 'https://github.com/'
+gitlab_url = 'https://gitlab.com/'
+x_url = 'https://x.com/'
+linkedin_url = 'https://www.linkedin.com/'
+facebook_url = 'https://www.facebook.com/'
+instagram_url = 'https://www.instagram.com/'
+youtube_url = 'https://www.youtube.com/'
+mastodon_url = 'https://mastodon.social/'
+matrix_url = 'https://matrix.org/'
+telegram_url = 'https://telegram.org/'
+bluesky_url = 'https://bsky.app'
+
+email_icon = true
+rss_icon = true
+
+[params.contact]
+email = "gren236@gmail.com"
+
 [module]
-  [module.hugoVersion]
-    extended = false
-    min = "0.116.0"
+[module.hugoVersion]
+extended = false
+min = "0.116.0"

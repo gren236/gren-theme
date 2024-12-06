@@ -12,6 +12,10 @@ hugo.linux
 # Temporary lock file while building
 /.hugo_build.lock
 
+# No content in theme
+content
+hugo.toml
+
 # IDE specific files
 .idea
 .vscode

@@ -1,13 +1,11 @@
-description = 'Theme description'
+description = 'A lightweight and responsive theme for Hugo based on Pico CSS'
 license = 'MIT'
-licenselink = 'https://github.com/owner/repo/LICENSE'
+licenselink = 'https://github.com/gren236/gren-theme/blob/main/LICENSE'
 name = 'Gren Theme'
-
 # The home page of the theme, where the source can be found
-homepage = 'https://github.com/owner/repo'
+homepage = 'https://github.com/gren236/gren-theme'
 
-# If you have a running demo of the theme
-demosite = 'https://owner.github.io/repo'
+min_version = "0.116.0"
 
 # Taxonomy terms
 features = ['some', 'awesome', 'features']

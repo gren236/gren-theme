@@ -1,2 +1,14 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<div class="container header">
+  <strong>{{ site.Title }}</strong>
+  
+  <button class="burger" aria-label="Open navigation menu">
+    <svg width="24" height="24" viewBox="0 0 24 24">
+      <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+    </svg>
+  </button>
+
+  <nav class="nav-menu">
+    {{ partial "menu.html" (dict "menuID" "main" "page" .) }} 
+    {{ partial "socials.html" . }}
+  </nav>
+</div>
