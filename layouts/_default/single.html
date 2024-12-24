@@ -1,29 +1,27 @@
 {{ define "main" }}
-  <div class="page">
-    <div class="grid">
-      <div>
-        <hgroup>
-          <h1>{{ .Title }}</h1>
+  <div class="container mx-auto pt-14 mt-16 md:max-w-5xl flex flex-row">
+    <article class="basis-3/4">
+      <header>
+        <h1>{{ .Title }}</h1>
+
+        {{ if .Date }}
+          {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} 
+          {{ $dateHuman := .Date | time.Format ":date_long" }}
+          <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        {{ end }}
+      </header>
+
+      <body>
+        {{ partial "content.html" .Content }}
+      </body>
+
+      <footer>
+        {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+      </footer>
+    </article>
     
-          {{ if .Date }}
-            {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} 
-            {{ $dateHuman := .Date | time.Format ":date_long" }}
-            <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
-          {{ end }}
-        </hgroup>
-
-        <article>
-          {{ .Content }}
-        </article>
-
-        <footer>
-          {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
-        </footer>
-      </div>
-      
-      <aside>
-        {{ .TableOfContents }}
-      </aside>
-    </div>
+    <aside class="basis-1/4">
+      {{ .TableOfContents }}
+    </aside>
   </div>
 {{ end }}

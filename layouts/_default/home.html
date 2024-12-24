@@ -1,9 +1,6 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <article>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </article>
-  {{ end }}
+  <div class="container mx-auto pt-14 mt-16 md:max-w-5xl">
+    {{ .Content }}
+    {{ partial "pages.html" site.RegularPages }}
+  </div>
 {{ end }}

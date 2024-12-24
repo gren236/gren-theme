@@ -1,18 +1,10 @@
-<div class="terms-container">
-  {{ with .page.Params.author }}
-    {{ with site.Taxonomies.author.Get . }}
-      <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
-    {{ else }}
-      {{ . }}
-    {{ end }}
-  {{ end }}
-
+<div>
   {{ with index .page.Params .taxonomy }}
-    <ul class="taxonomy-list">
+    <ul class="flex flex-row gap-5">
       {{ range . }}
         {{ $href := (printf "/%s/%s" $.taxonomy (urlize .)) }}
-        <li>
-          <a href="{{ $href }}" class="taxonomy-tag">{{ . }}</a>
+        <li class="text-mirage-accent text-sm font-medium">
+          <a href="{{ $href }}">{{ . | strings.ToUpper }}</a>
         </li>
       {{ end }}
     </ul>

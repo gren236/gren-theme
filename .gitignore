@@ -16,6 +16,8 @@ hugo.linux
 content
 hugo.toml
 
+node_modules
+
 # IDE specific files
 .idea
 .vscode

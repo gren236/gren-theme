@@ -1,0 +1,24 @@
+<div class="flex flex-col gap-10">
+  {{ range . }}
+    <article>
+      <header class="flex flex-row justify-between items-center py-3">
+        <h2 class="text-3xl font-bold">
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        </h2>
+        {{ if .Date }}
+          {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+          {{ $dateHuman := .Date | time.Format ":date_medium" }}
+          <time class="text-mirage-secondary" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        {{ end }}
+      </header>
+
+      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+
+      {{ partial "content.html" .Summary }}
+
+      <footer class="pt-3">
+        <a href="{{ .RelPermalink }}" class="text-mirage-accent">Read more →</a>
+      </footer>
+    </article>
+  {{ end }}
+</div>

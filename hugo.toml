@@ -31,6 +31,13 @@ rss_icon = true
 [params.contact]
 email = "gren236@gmail.com"
 
+
+[build]
+[[build.cachebusters]]
+source = 'layouts/.*'
+target = 'css'
+
+
 [module]
 [module.hugoVersion]
 extended = false

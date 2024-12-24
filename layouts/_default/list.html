@@ -1,10 +1,9 @@
 {{ define "main" }}
-  <h1 class="list-title">{{ .Title }}</h1>
-  {{ .Content }}
-  {{ range .Pages }}
-    <article>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      {{ .Summary }}
-    </article>
-  {{ end }}
+  <div class="container mx-auto pt-14 mt-16 md:max-w-5xl">
+    <h1 class="text-4xl font-bold pb-6 text-center">{{ .Title }}</h1>
+  
+    {{ .Content }}
+    
+    {{ partial "pages.html" .Pages }}
+  </div>
 {{ end }}
