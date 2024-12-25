@@ -1,30 +1,38 @@
 {{ define "main" }}
   <div class="pt-14 mt-16 2xl:grid 2xl:grid-cols-[1fr_auto_1fr]">
-    <article class="container mx-auto w-full md:w-[64rem] 2xl:mx-0 2xl:col-start-2 2xl:col-span-1">
+    <div
+      class="container mx-auto w-full md:w-[64rem] 2xl:mx-0 2xl:col-start-2 2xl:col-span-1"
+    >
       <header>
-        <h1>{{ .Title }}</h1>
+        <h1 class="text-mirage-title text-4xl font-bold">{{ .Title }}</h1>
 
         {{ if .Date }}
-          {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} 
+          {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
           {{ $dateHuman := .Date | time.Format ":date_long" }}
-          <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+          <time
+            class="text-mirage-secondary text-sm"
+            datetime="{{ $dateMachine }}"
+            >{{ $dateHuman }}</time
+          >
         {{ end }}
       </header>
 
-      <body>
+      <article class="pt-9">
         {{ partial "content.html" .Content }}
-      </body>
+      </article>
 
-      <footer>
+      <footer class="pt-8">
         {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
       </footer>
-    </article>
-    
+    </div>
+
     {{ if .Fragments.Identifiers }}
       <aside class="hidden 2xl:block 2xl:col-start-3 2xl:col-span-1">
         <div class="sticky top-20 text-sm leading-6">
           <h2 class="font-semibold">Contents</h2>
-          <div class="text-mirage-secondary list-none [&_ul]:pl-5 [&>nav>ul]:pl-0">
+          <div
+            class="text-mirage-secondary list-none [&_ul]:pl-5 [&>nav>ul]:pl-0 [&_a:hover]:text-mirage-secondaryhover"
+          >
             {{ .TableOfContents }}
           </div>
         </div>

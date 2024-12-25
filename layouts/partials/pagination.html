@@ -1,0 +1,40 @@
+{{- if gt .Paginator.TotalPages 1 }}
+  <ul class="grid grid-cols-3 items-center w-full">
+    {{- with .Paginator }}
+      {{- $currentPageNumber := .PageNumber }}
+
+
+      <li class="justify-self-start">
+        {{- if .Prev }}
+          <a
+            class="hover:text-mirage-primaryhover"
+            href="{{ .Prev.URL }}"
+            aria-label="Previous"
+            role="button"
+            >Previous</a
+          >
+        {{ else }}
+          <span class="text-mirage-disabled">Previous</span>
+        {{- end }}
+      </li>
+
+      <li class="justify-self-center">
+        <span>{{ .PageNumber }} of {{ .TotalPages }}</span>
+      </li>
+
+      <li class="justify-self-end">
+        {{- if .Next }}
+          <a
+            class="hover:text-mirage-primaryhover"
+            href="{{ .Next.URL }}"
+            aria-label="Next"
+            role="button"
+            >Next</a
+          >
+        {{ else }}
+          <span class="text-mirage-disabled">Next</span>
+        {{- end }}
+      </li>
+    {{- end }}
+  </ul>
+{{- end }}

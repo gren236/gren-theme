@@ -8,10 +8,13 @@ module.exports = {
       mirage: {
         bg: "#242936",
         bgnav: "#1F2430",
+        title: "#FFFFFF",
         primary: "#DDDBD1",
         primaryhover: "#FFFFFF",
         secondary: "#B8CFE6",
+        secondaryhover: "#C3DDF7",
         accent: "#D5FF80",
+        disabled: "#6E7C8E",
       },
     },
     fontFamily: {

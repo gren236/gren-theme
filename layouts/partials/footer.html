@@ -1,4 +1,19 @@
-<div class="mx-auto items-center h-20 w-full text-base flex flex-col justify-center">
-    <p class="text-center text-xs text-mirage-secondary">Copyright {{ now.Year }}. All rights reserved.</p>
-    <p class="text-center text-xs text-mirage-secondary">Made with love.</p>
+<div
+  class="mx-auto items-center h-20 w-full text-base flex flex-col justify-center"
+>
+  <p class="text-center text-xs text-mirage-secondary">
+    {{ .Site.Copyright }}
+  </p>
+  <p class="text-center text-xs text-mirage-secondary">
+    Made using
+    <a class="underline" href="https://gohugo.io/" target="_blank">Hugo</a>
+    and
+    <a
+      class="underline"
+      href="https://github.com/gren236/gren-theme"
+      target="_blank"
+      >Gren</a
+    >
+    theme with ❤️
+  </p>
 </div>
