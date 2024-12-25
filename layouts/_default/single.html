@@ -1,6 +1,6 @@
 {{ define "main" }}
-  <div class="container mx-auto pt-14 mt-16 md:max-w-5xl flex flex-row">
-    <article class="basis-3/4">
+  <div class="pt-14 mt-16 2xl:grid 2xl:grid-cols-[1fr_auto_1fr]">
+    <article class="container mx-auto w-full md:w-[64rem] 2xl:mx-0 2xl:col-start-2 2xl:col-span-1">
       <header>
         <h1>{{ .Title }}</h1>
 
@@ -20,8 +20,15 @@
       </footer>
     </article>
     
-    <aside class="basis-1/4">
-      {{ .TableOfContents }}
-    </aside>
+    {{ if .Fragments.Identifiers }}
+      <aside class="hidden 2xl:block 2xl:col-start-3 2xl:col-span-1">
+        <div class="sticky top-20 text-sm leading-6">
+          <h2 class="font-semibold">Contents</h2>
+          <div class="text-mirage-secondary list-none [&_ul]:pl-5 [&>nav>ul]:pl-0">
+            {{ .TableOfContents }}
+          </div>
+        </div>
+      </aside>
+    {{ end }}
   </div>
 {{ end }}
