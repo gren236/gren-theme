@@ -11,7 +11,9 @@
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <ul class="inline-flex space-x-10">
+  <ul
+    class="py-7 lg:py-0 flex flex-col lg:flex-row text-center lg:space-x-10 space-y-7 lg:space-y-0 w-full lg:w-auto lg:mr-10"
+  >
     {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
   </ul>
 {{- end }}
@@ -33,7 +35,7 @@
     {{- end }}
     <li>
       <a
-        class="hover:text-mirage-primaryhover"
+        class="hover:text-mirage-primaryhover w-full"
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}

@@ -1,17 +1,44 @@
 <div
-  class="bg-mirage-bgnav mx-auto px-10 inline-flex items-center justify-between w-full h-16 text-base fixed top-0 z-50"
+  class="bg-mirage-bgnav mx-auto px-10 flex flex-wrap flex-col lg:flex-row justify-between w-full py-[1.13rem] text-base fixed top-0 z-50"
 >
-  <a href="{{ absURL "" }}" class="font-bold text-lg">{{ site.Title }}</a>
+  <div class="flex flex-row justify-between items-center">
+    <a href="{{ absURL "" }}" class="font-bold text-lg">{{ site.Title }}</a>
 
-  {{/* <button class="burger" aria-label="Open navigation menu">
-    <svg width="24" height="24" viewBox="0 0 24 24">
-    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-    </svg>
-    </button>
-  */}}
+    <span
+      class="menu-toggle fill-mirage-primary cursor-pointer lg:hidden"
+      title="Menu"
+    >
+      <svg
+        id="burger-menu"
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="1.2em"
+        height="1.2em"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M 0 32 L 32 32 L 32 24 L 0 24 L 0 32 Z M 0 20.033 L 32 20.033 L 32 12.032 L 0 12.032 L 0 20.033 Z M 0 8.001 L 32 8.001 L 32 0 L 0 0 L 0 8.001 Z"
+        />
+      </svg>
+      <svg
+        id="close-menu"
+        class="hidden"
+        width="1.3em"
+        height="1.3em"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M 9.47 12 L 0 21.47 L 2.53 24 L 12 14.53 L 21.47 24 L 24 21.47 L 14.53 12 L 24 2.53 L 21.469 0 L 12 9.47 L 2.53 0 L 0 2.53 L 9.47 12 Z"
+        />
+      </svg>
+    </span>
+  </div>
 
-
-  <nav class="inline-flex space-x-10">
+  <nav
+    class="nav-menu hidden flex-wrap lg:flex lg:flex-nowrap items-center justify-between"
+  >
     {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
     {{ partial "socials.html" . }}
   </nav>

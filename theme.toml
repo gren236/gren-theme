@@ -8,7 +8,6 @@ homepage = 'https://github.com/gren236/gren-theme'
 min_version = "0.116.0"
 
 # Taxonomy terms
-features = ['some', 'awesome', 'features']
 tags = ['blog', 'company']
 
 # If the theme has a single author
