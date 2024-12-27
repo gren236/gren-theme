@@ -1,4 +1,11 @@
 {
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gren236/gren-theme"
+  },
+  "name": "gren-theme",
+  "version": "0.0.1",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
@@ -8,8 +15,7 @@
     "prettier-plugin-go-template": "^0.0.15",
     "tailwindcss": "^3.4.17"
   },
-  "dependencies": {
-    "@tailwindcss/typography": "^0.5.15",
-    "tailwindcss": "^3.4.17"
+  "scripts": {
+    "format": "prettier --write ./layouts ./assets"
   }
 }
