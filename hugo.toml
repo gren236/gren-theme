@@ -1,0 +1,70 @@
+baseURL = 'http://localhost:1313'
+languageCode = 'en-US'
+title = 'My New Hugo Site'
+copyright = "2024 Egor Rudkov All rights reserved"
+
+
+# [menus]
+# [[menus.main]]
+# name = 'Home'
+# pageRef = '/'
+# weight = 10
+# [[menus.main]]
+# name = 'Pages'
+# pageRef = '/pages'
+# weight = 20
+# [[menus.main]]
+# name = 'About'
+# pageRef = '/about'
+# weight = 30
+
+# [params]
+# github_url = 'https://github.com/'
+# gitlab_url = 'https://gitlab.com/'
+# x_url = 'https://x.com/'
+# linkedin_url = 'https://www.linkedin.com/'
+# facebook_url = 'https://www.facebook.com/'
+# instagram_url = 'https://www.instagram.com/'
+# youtube_url = 'https://www.youtube.com/'
+# mastodon_url = 'https://mastodon.social/'
+# matrix_url = 'https://matrix.org/'
+# telegram_url = 'https://telegram.org/'
+# bluesky_url = 'https://bsky.app'
+
+# email_icon = true
+# rss_icon = true
+
+# [params.author]
+# email = 'jdoe@example.org'
+# name = 'John Doe'
+
+# [pagination]
+# disableAliases = false
+# pagerSize = 2
+# path = 'page'
+
+[module]
+[module.hugoVersion]
+extended = false
+min = "0.112.0"
+[[module.mounts]]
+source = "assets"
+target = "assets"
+[[module.mounts]]
+source = "hugo_stats.json"
+target = "assets/watching/hugo_stats.json"
+
+[build]
+writeStats = true
+[[build.cachebusters]]
+source = "assets/watching/hugo_stats\\.json"
+target = "styles\\.css"
+[[build.cachebusters]]
+source = "(postcss|tailwind)\\.config\\.js"
+target = "css"
+[[build.cachebusters]]
+source = "assets/.*\\.(js|ts|jsx|tsx)"
+target = "js"
+[[build.cachebusters]]
+source = "assets/.*\\.(.*)$"
+target = "$1"

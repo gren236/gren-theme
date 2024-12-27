@@ -13,7 +13,6 @@ hugo.linux
 
 # No content in theme
 content
-hugo.toml
 
 node_modules
 
