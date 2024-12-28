@@ -47,12 +47,12 @@ copyright = "2024 Egor Rudkov All rights reserved"
 [module.hugoVersion]
 extended = false
 min = "0.112.0"
-[[module.mounts]]
-source = "assets"
-target = "assets"
-[[module.mounts]]
-source = "hugo_stats.json"
-target = "assets/watching/hugo_stats.json"
+# [[module.mounts]]
+# source = "assets"
+# target = "assets"
+# [[module.mounts]]
+# source = "hugo_stats.json"
+# target = "assets/watching/hugo_stats.json"
 
 [build]
 writeStats = true

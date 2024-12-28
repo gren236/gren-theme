@@ -1,4 +1,4 @@
-description = 'A lightweight and responsive theme for Hugo based on Pico CSS'
+description = 'A lightweight and responsive theme for Hugo based on TailwindCSS'
 license = 'MIT'
 licenselink = 'https://github.com/gren236/gren-theme/blob/main/LICENSE'
 name = 'Gren Theme'
