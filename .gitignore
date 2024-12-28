@@ -10,6 +10,7 @@ hugo.linux
 
 # Temporary lock file while building
 /.hugo_build.lock
+hugo_stats.json
 
 # No content in theme
 content
