@@ -1,3 +1,47 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+@plugin '@tailwindcss/typography';
+
+@source '../../hugo_stats.json';
+
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --color-mirage-bg: #242936;
+  --color-mirage-bgnav: #1f2430;
+  --color-mirage-title: #ffffff;
+  --color-mirage-primary: #dddbd1;
+  --color-mirage-primaryhover: #ffffff;
+  --color-mirage-secondary: #b8cfe6;
+  --color-mirage-secondaryhover: #c3ddf7;
+  --color-mirage-accent: #d5ff80;
+  --color-mirage-disabled: #6e7c8e;
+
+  --font-*: initial;
+  --font-sans: InterVariable, sans-serif;
+}
+
+@utility container {
+  padding-inline: 2.5rem;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
