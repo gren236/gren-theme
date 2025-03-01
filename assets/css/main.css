@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@source "hugo_stats.json";
-
 @plugin '@tailwindcss/typography';
 
 @source '../../hugo_stats.json';
@@ -25,7 +23,7 @@
 }
 
 @utility container {
-  padding-inline: 2rem;
+  padding-inline: 1.5rem;
 }
 
 /*
