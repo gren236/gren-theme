@@ -42,6 +42,10 @@ copyright = "2024 Egor Rudkov All rights reserved"
 # pagerSize = 2
 # path = 'page'
 
+[markup]
+[markup.highlight]
+style = 'nordic'
+
 [module]
 [module.hugoVersion]
 extended = false
