@@ -1,5 +1,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{{ if .Site.Params.enable_open_graph }}
+  {{ template "_internal/opengraph.html" . }}
+{{ end }}
 <title>
   {{ if .IsHome }}
     {{ site.Title }}

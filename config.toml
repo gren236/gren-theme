@@ -17,7 +17,8 @@ copyright = "2024 Egor Rudkov All rights reserved"
 # pageRef = '/about'
 # weight = 30
 
-# [params]
+[params]
+enable_open_graph = true
 # github_url = 'https://github.com/'
 # gitlab_url = 'https://gitlab.com/'
 # x_url = 'https://x.com/'
