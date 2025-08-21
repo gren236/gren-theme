@@ -25,7 +25,7 @@
         {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
       </footer>
 
-      {{ if .Site.Params.remark.host }}
+      {{ if and .Site.Params.remark.host .Params.comments }}
         <div id="remark42" class="pt-8"></div>
       {{ end }}
     </div>
