@@ -21,9 +21,13 @@
         {{ partial "content.html" .Content }}
       </article>
 
-      <footer class="pt-8">
+      <footer class="pt-9">
         {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
       </footer>
+
+      {{ if .Site.Params.remark.host }}
+        <div id="remark42" class="pt-8"></div>
+      {{ end }}
     </div>
 
     {{ if .Fragments.Identifiers }}

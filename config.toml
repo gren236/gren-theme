@@ -34,6 +34,10 @@ enable_open_graph = true
 # email_icon = true
 # rss_icon = true
 
+# [params.remark]
+# host = 'http://localhost:8080'
+# site_id = 'remark'
+
 # [params.author]
 # email = 'jdoe@example.org'
 # name = 'John Doe'
